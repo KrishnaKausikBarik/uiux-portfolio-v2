@@ -1267,7 +1267,6 @@ textarea.input-field {
 
   .nav-open-btn,
   .navbar-top { display: none; }
-
   .navbar {
     all: unset;
     display: block;
@@ -1325,7 +1324,7 @@ textarea.input-field {
   .tab-content .grid-list { grid-template-columns: 1fr 1fr; }
 
   :is([data-tab-content="interview"], [data-tab-content="exhibition"], [data-tab-content="awward"]) .grid-list {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 6fr);
   }
 
 
