@@ -1200,30 +1200,31 @@ src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3712.6609392057867!2d
 
     <!-- Email Js -->
 
-    <script>
-  emailjs.init("QDSTMYwBo_jGYZqrJ");
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  document
-    .getElementById("contact-form")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
+<script>
+emailjs.init("QDSTMYwBo_jGYZqrJ");
 
-      emailjs
-        .sendForm(
-          "service_w9pyxzs",
-          "template_ubmxvus",
-          this
-        )
-        .then(function () {
-          alert("Thank you! Your message has been sent.");
-          document.getElementById("contact-form").reset();
-        })
-        .catch(function (error) {
-          console.error("EmailJS Error:", error);
-          alert("Failed to send message. Please try again.");
-        });
+document.getElementById("contact-form")
+.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm(
+        "service_w9pyxzs",
+        "template_ubmxvus",
+        this
+    )
+    .then(() => {
+        alert("Message sent!");
+        this.reset();
+    })
+    .catch((err) => {
+        console.error(err);
+        alert("Failed to send.");
     });
+});
 </script>
+
 
     
   </body>
