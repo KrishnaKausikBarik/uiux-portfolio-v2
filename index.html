@@ -1039,7 +1039,7 @@
             <h2 class="title h2 section-title">Get In Touch</h2>
 
             <div class="contact-content">
-              <form action="https://formsubmit.co/krishnakaushik642@gmail.com" method="post" class="contact-form">
+              <form id="contact-form" method="post" class="contact-form">
                 <input
                   type="text"
                   name="name"
@@ -1077,8 +1077,8 @@
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_template" value="table">
 
-                <button type="submit" class="btn btn:hover">
-                  <span class="span">Get A Quote</span>
+                <button type="submit" class="btn btn:hover" class="btn btn-primary">
+                  <span class="span">Submit</span>
 
                   <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
                 </button>
@@ -1197,5 +1197,34 @@ src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3712.6609392057867!2d
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
     ></script>
+
+    <!-- Email Js -->
+
+    <script>
+  emailjs.init("QDSTMYwBo_jGYZqrJ");
+
+  document
+    .getElementById("contact-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      emailjs
+        .sendForm(
+          "service_w9pyxzs",
+          "template_ubmxvus",
+          this
+        )
+        .then(function () {
+          alert("Thank you! Your message has been sent.");
+          document.getElementById("contact-form").reset();
+        })
+        .catch(function (error) {
+          console.error("EmailJS Error:", error);
+          alert("Failed to send message. Please try again.");
+        });
+    });
+</script>
+
+    
   </body>
 </html>
