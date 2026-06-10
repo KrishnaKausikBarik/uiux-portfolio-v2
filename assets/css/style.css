@@ -1526,3 +1526,34 @@ textarea.input-field {
     max-width: 280px;
   }
 }
+
+.logo-img {
+  width: 150px;
+  height: auto;
+}
+
+@media (max-width: 575px) {
+  .logo-img {
+    width: 110px;
+  }
+}
+
+@media (max-width: 575px) {
+
+  .header {
+    padding-block: 10px;
+  }
+
+  .header .container {
+    padding-inline: 12px;
+  }
+
+  .nav-open-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .nav-open-btn .line {
+    width: 20px;
+  }
+}
