@@ -14,6 +14,12 @@
   #CUSTOM PROPERTY
 \*-----------------------------------*/
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 :root {
 
   /**
@@ -160,7 +166,10 @@ body {
   overflow: hidden;
 }
 
-body.loaded { overflow-y: auto; }
+body.loaded {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
 
 body.nav-active { overflow: hidden; }
 
@@ -239,6 +248,19 @@ body.nav-active { overflow: hidden; }
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.about-banner {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.about-banner img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 [data-tilt] { transition: var(--transition-3); }
@@ -533,7 +555,9 @@ body.nav-active { overflow: hidden; }
   left: 50%;
   transform: translateX(-50%);
   font-size: var(--fontSize-4);
-  min-width: max-content;
+  min-width: auto;
+  width: 100%;
+  text-align: center;
   z-index: 1;
 }
 
@@ -880,6 +904,14 @@ textarea.input-field {
 .contact .map {
   width: 100%;
   filter: grayscale(1);
+}
+
+.map {
+  width: 100%;
+  max-width: 100%;
+  height: 450px;
+  border: 0;
+  display: block;
 }
 
 .contact-item {
@@ -1533,27 +1565,128 @@ textarea.input-field {
 }
 
 @media (max-width: 575px) {
+
+  .contact-item {
+    gap:8px;
+  }
+
+  .contact-item .item-icon img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  
   .logo-img {
     width: 110px;
   }
 }
 
+@media (max-width: 767px) {
+  .tab-content .grid-list {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 @media (max-width: 575px) {
 
+  .tab-content {
+    padding: 20px;
+  }
+
+  .tab-content .grid-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .about-banner {
+    width: 100%;
+  }
+
+  .about-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .about-content {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .section-title {
+     font-size: 2.8rem;
+    line-height: 1.3;
+    word-break: break-word;
+  }
+
+  .section-text {
+    font-size: 1.6rem;
+    line-height: 1.8;
+  }
+
+   .about-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .about-item .h5,
+  .about-item .span {
+    font-size: 1.8rem;
+    word-break: break-word;
+  }
+
+  .about-item {
+    overflow-wrap: break-word;
+  }
+
   .header {
-    padding-block: 10px;
+    padding-block: 8px;
   }
 
   .header .container {
-    padding-inline: 12px;
+    padding-inline: 10px;
   }
 
   .nav-open-btn {
-    width: 44px;
-    height: 44px;
+    width: 42px;
+    height: 42px;
   }
+  
+  .logo img {
+    width: 110px !important;
+    height: auto;
+  }
+
 
   .nav-open-btn .line {
     width: 20px;
+  }
+}
+
+
+/* Mobile & Tablet Button Fix */
+@media (max-width: 991px) {
+
+  
+  .cta .btn,
+  .hero .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 280px;
+    margin-inline: auto;
+    border: 1px solid #fff;
+    min-height: 56px;
+  }
+
+   .contact .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .btn .span {
+    text-align: center;
   }
 }
