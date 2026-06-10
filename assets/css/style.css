@@ -1494,3 +1494,35 @@ textarea.input-field {
   .hero .container { grid-template-columns: 1fr 0.85fr; }
 
 }
+
+/* Mobile Navbar Fix */
+@media (max-width: 480px) {
+
+  .header {
+    padding-block: 12px;
+  }
+
+  .header .container {
+    padding-inline: 12px;
+  }
+
+  .logo {
+    font-size: 2.2rem;
+    line-height: 1;
+  }
+
+  .nav-open-btn {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+  }
+
+  .nav-open-btn .line {
+    width: 20px;
+  }
+
+  .navbar {
+    width: 85%;
+    max-width: 280px;
+  }
+}
